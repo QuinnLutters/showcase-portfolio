@@ -19,7 +19,7 @@ export default function HalftoneAnimation() {
     img.onload = function() {
         processImage(img);
     };
-    img.src = '/src/assets/cutout-me.png';
+    img.src = '/assets/cutout-me.png';
 
     function processImage(img: HTMLImageElement) {
         const dpr = window.devicePixelRatio || 1;

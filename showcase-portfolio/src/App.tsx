@@ -22,7 +22,7 @@ function App() {
       <div 
         className="fixed inset-0 -z-[9] pointer-events-none opacity-100"
         style={{
-          backgroundImage: 'url(/src/assets/OVERLAY.png)',
+          backgroundImage: 'url(/assets/OVERLAY.png)',
           backgroundRepeat: 'repeat',
           mixBlendMode: 'overlay'
         }}
@@ -52,7 +52,7 @@ function App() {
           <div className="flex-shrink-0 flex items-center justify-center -mt-2" style={{ width: '220px' }}>
             <div className="relative">
               <img 
-                src="/src/assets/img/quinn-action.jpg" 
+                src="/assets/img/quinn-action.jpg" 
                 alt="Portrait of quinn" 
                 className="w-full"
               />
@@ -60,7 +60,7 @@ function App() {
               <div 
                 className="absolute inset-0 pointer-events-none opacity-50"
                 style={{
-                  backgroundImage: 'url(/src/assets/OVERLAY.png)',
+                  backgroundImage: 'url(/assets/OVERLAY.png)',
                   backgroundRepeat: 'repeat',
                   mixBlendMode: 'overlay'
                 }}
@@ -93,7 +93,7 @@ function App() {
           {/* Column 3: Large Skiing Competition Image */}
           <div className="flex-shrink-0 relative" style={{ width: '450px' }}>
             <img 
-              src="/src/assets/img/quinn_comp.png" 
+              src="/assets/img/quinn_comp.png" 
               alt="Quinn in action during a skiing competition" 
               className="w-full"
             />
@@ -101,7 +101,7 @@ function App() {
             <div 
               className="absolute inset-0 pointer-events-none opacity-50"
               style={{
-                backgroundImage: 'url(/src/assets/OVERLAY.png)',
+                backgroundImage: 'url(/assets/OVERLAY.png)',
                 backgroundRepeat: 'repeat',
                 mixBlendMode: 'overlay'
               }}
@@ -113,7 +113,7 @@ function App() {
         <div className="flex justify-center">
           <div className="flex-shrink-0 -mt-30 ml-85 relative" style={{ width: '300px' }}>
             <img 
-              src="/src/assets/img/quinn-laptop-laugh.JPG" 
+              src="/assets/img/quinn-laptop-laugh.JPG" 
               alt="Quinn laughing with his laptop" 
               className="w-full"
             />
@@ -121,11 +121,59 @@ function App() {
             <div 
               className="absolute inset-0 pointer-events-none opacity-50"
               style={{
-                backgroundImage: 'url(/src/assets/OVERLAY.png)',
+                backgroundImage: 'url(/assets/OVERLAY.png)',
                 backgroundRepeat: 'repeat',
                 mixBlendMode: 'overlay'
               }}
             ></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Work Section */}
+      <div className="relative z-10 min-h-screen px-[180px] py-24">
+        {/* Project Grid - 2 columns, alternating sizes */}
+        <div className="space-y-16">
+          {/* Row 1: Large left, Small right - SPACE BETWEEN */}
+          <div className="flex justify-between items-center min-h-screen">
+            {/* Large Project - 500x600 */}
+            <div className="flex-shrink-0" style={{ width: '500px' }}>
+              <div className="bg-gray-300 w-full mb-4" style={{ height: '600px' }}></div>
+              <p className="text-black text-[1.3rem] mb-2 text-left">
+                Look at this cool project I created it does something cool
+              </p>
+              <p className="text-[1.1rem] text-left" style={{ color: '#666666' }}>UX Design • User research</p>
+            </div>
+
+            {/* Small Project - 300x400 */}
+            <div className="flex-shrink-0" style={{ width: '300px' }}>
+              <div className="bg-gray-300 w-full mb-4" style={{ height: '400px' }}></div>
+              <p className="text-black text-[1.3rem] mb-2 text-left">
+                Look at this cool project I created it does something cool
+              </p>
+              <p className="text-[1.1rem] text-left" style={{ color: '#666666' }}>Web development</p>
+            </div>
+          </div>
+
+          {/* Row 2: Small left, Large right - SPACE BETWEEN */}
+          <div className="flex justify-between items-center min-h-screen">
+            {/* Small Project - 300x400 */}
+            <div className="flex-shrink-0" style={{ width: '300px' }}>
+              <div className="bg-gray-300 w-full mb-4" style={{ height: '400px' }}></div>
+              <p className="text-black text-[1.3rem] mb-2 text-left">
+                Look at this cool project I created it does something cool
+              </p>
+              <p className="text-[1.1rem] text-left" style={{ color: '#666666' }}>Web development</p>
+            </div>
+
+            {/* Large Project - 500x600 */}
+            <div className="flex-shrink-0" style={{ width: '500px' }}>
+              <div className="bg-gray-300 w-full mb-4" style={{ height: '600px' }}></div>
+              <p className="text-black text-[1.3rem] mb-2 text-left">
+                Look at this cool project I created it does something cool
+              </p>
+              <p className="text-[1.1rem] text-left" style={{ color: '#666666' }}>UX Design • User research</p>
+            </div>
           </div>
         </div>
       </div>
