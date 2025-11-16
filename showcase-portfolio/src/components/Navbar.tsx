@@ -6,7 +6,7 @@ export default function Navbar() {
                 {/* Logo on the left */}
                 <a href="/" className="flex items-center h-[52px]">
                     <img 
-                        src="/src/assets/Logo_QA_black.svg" 
+                        src="/assets/Logo_QA_black.svg" 
                         alt="Logo" 
                         className="h-[40px] w-auto"
                     />
@@ -39,7 +39,7 @@ export default function Navbar() {
                     </div>
                     <button className="hover:opacity-70 transition-opacity">
                         <img 
-                            src="/src/assets/menu.svg" 
+                            src="/assets/menu.svg" 
                             alt="Menu" 
                             style={{ width: '24px', height: '24px' }}
                         />
@@ -63,7 +63,7 @@ export default function Navbar() {
                     }}
                     >
                         <img 
-                            src="/src/assets/send.svg" 
+                            src="/assets/send.svg" 
                             alt="Contact" 
                             style={{ width: '24px', height: '24px' }}
                         />
