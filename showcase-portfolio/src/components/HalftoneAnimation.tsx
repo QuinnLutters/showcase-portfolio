@@ -4,11 +4,8 @@ export default function HalftoneAnimation() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d', { alpha: true });
-    if (!ctx) return;
+    const canvas = canvasRef.current!;
+    const ctx = canvas.getContext('2d', { alpha: true })!;
 
     let circles: any[] = [];
     let animationTime = 0;
