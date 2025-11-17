@@ -6,6 +6,33 @@ import HalftoneAnimation from '@/components/HalftoneAnimation';
 function App() {
   return (
     <>
+      <div className="relative min-h-screen">
+      {/* Grid Overlay - absolute, scrolls with page */}
+      <div 
+        className="absolute top-0 left-0 w-full pointer-events-none z-0 opacity-10"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(9, 200px)',
+          gridTemplateRows: 'repeat(13, 340px)',
+          gap: '0px',
+          justifyContent: 'center',
+          transform: 'translateY(-150px)',
+          height: '100%' // Matches content height exactly
+        }}
+      >
+        {[...Array(117)].map((_, i) => (
+          <div 
+            key={i}
+            style={{
+              width: '200px',
+              height: '340px',
+              outline: '2px solid rgba(0, 0, 0, 0.1)',
+              outlineOffset: '-1px'
+            }}
+          />
+        ))}
+      </div>
+
       {/* Fixed Silk Background */}
       <div className="fixed inset-0 -z-10 opacity-20">
         <Silk
@@ -16,8 +43,10 @@ function App() {
           rotation={0}
         />
       </div>
+      
       {/* Halftone Animation Background */}
       <HalftoneAnimation />
+      
       {/* Grain overlay */}
       <div 
         className="fixed inset-0 -z-[9] pointer-events-none opacity-100"
@@ -28,10 +57,12 @@ function App() {
         }}
       ></div>
       
-      {/* Navbar */}
-      <div className="px-[180px]">
-        <Navbar />
-      </div>
+      {/* All your content with relative positioning */}
+      <div className="relative z-10">
+        {/* Navbar */}
+        <div className="px-[180px]">
+          <Navbar />
+        </div>
       
       {/* Hero Content */}
       <div className="relative z-10 min-h-screen flex items-center">
@@ -46,7 +77,7 @@ function App() {
       </div>
 
       {/* About Section */}
-      <div className="relative z-10 min-h-screen py-24">
+      <div className="relative z-10 min-h-screen py-24 mt-[50px]">
         <div className="flex justify-between gap-8">
           {/* Column 1: Action Portrait */}
           <div className="flex-shrink-0 flex items-center justify-center -mt-2" style={{ width: '220px' }}>
@@ -138,7 +169,13 @@ function App() {
           <div className="flex justify-between items-center min-h-screen">
             {/* Large Project - 500x600 */}
             <div className="flex-shrink-0" style={{ width: '500px' }}>
-              <div className="bg-gray-300 w-full mb-4" style={{ height: '600px' }}></div>
+              <div className="w-full mb-4 overflow-hidden" style={{ height: '600px' }}>
+                <img 
+                  src="/assets/img/driven-app-mockup.png" 
+                  alt="Project name" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="text-black text-[1.3rem] mb-2 text-left">
                 Look at this cool project I created it does something cool
               </p>
@@ -147,7 +184,13 @@ function App() {
 
             {/* Small Project - 300x400 */}
             <div className="flex-shrink-0" style={{ width: '300px' }}>
-              <div className="bg-gray-300 w-full mb-4" style={{ height: '400px' }}></div>
+              <div className="w-full mb-4 overflow-hidden" style={{ height: '400px' }}>
+                <img 
+                  src="/assets/img/driven-app-mockup.png" 
+                  alt="Project name" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="text-black text-[1.3rem] mb-2 text-left">
                 Look at this cool project I created it does something cool
               </p>
@@ -159,7 +202,13 @@ function App() {
           <div className="flex justify-between items-center min-h-screen">
             {/* Small Project - 300x400 */}
             <div className="flex-shrink-0" style={{ width: '300px' }}>
-              <div className="bg-gray-300 w-full mb-4" style={{ height: '400px' }}></div>
+              <div className="w-full mb-4 overflow-hidden" style={{ height: '400px' }}>
+                <img 
+                  src="/assets/img/driven-app-mockup.png" 
+                  alt="Project name" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="text-black text-[1.3rem] mb-2 text-left">
                 Look at this cool project I created it does something cool
               </p>
@@ -168,7 +217,13 @@ function App() {
 
             {/* Large Project - 500x600 */}
             <div className="flex-shrink-0" style={{ width: '500px' }}>
-              <div className="bg-gray-300 w-full mb-4" style={{ height: '600px' }}></div>
+              <div className="w-full mb-4 overflow-hidden" style={{ height: '600px' }}>
+                <img 
+                  src="/assets/img/driven-app-mockup.png" 
+                  alt="Project name" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="text-black text-[1.3rem] mb-2 text-left">
                 Look at this cool project I created it does something cool
               </p>
@@ -177,6 +232,43 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="relative z-10 min-h-screen  py-16 flex flex-col justify-between">
+        <div className="flex justify-between items-start">
+          {/* Left side - Title */}
+          <div>
+            <h2 className="text-black text-[6.5rem] font-black leading-tight text-left mt-[50px]">
+              Design'n &<br />
+              Creating since<br />
+              2022
+            </h2>
+          </div>
+
+          {/* Right side - Socials */}
+          <div className="text-right mt-[350px]">
+            <p className="text-black text-[1.4rem] font-medium mb-2" style={{ color: '#666666' }}>Socials</p>
+            <a href="https://www.linkedin.com/in/quinn-lutters-38ba5a27b/" target="_blank" rel="noopener noreferrer" className="block text-black text-[1.4rem] font-medium mb-1 hover:underline">
+              LinkedIn
+            </a>
+            <a href="https://behance.net/yourprofile" target="_blank" rel="noopener noreferrer" className="block text-black text-[1.4rem] font-medium mb-1 hover:underline">
+              Behance
+            </a>
+            <a href="mailto:quinn.lutters@gmail.com" className="block text-black text-[1.4rem] font-medium hover:underline">
+              Email
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom row - Copyright and location */}
+        <div className="flex justify-between mt-24 text-[1.1rem] text-black">
+          <p>©2025 QAM Lutters. All Rights Reserved</p>
+
+          <p>Located in the Netherlands</p>
+        </div>
+      </footer>
+      </div>
+    </div>
     </>
   )
 }
