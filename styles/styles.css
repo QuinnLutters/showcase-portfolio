@@ -1,0 +1,188 @@
+@font-face {
+    font-family: Montserrat;
+    src:    url("../assets/types/Montserrat-Thin.woff2") format("woff2"),
+            url("../assets/types/Montserrat-Thin.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: BebasNeue;
+    src:   url("../assets/types/BebasNeue-Regular.woff2") format("woff2"),
+            url("../assets/types/BebasNeue-Regular.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: TimesRoman;
+    src:    url("../assets/types/TimesNewRomanPSMT.woff2") format("woff2"),
+            url("../assets/types/TimesNewRomanPSMT.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Components */
+.bg-gradient{
+    background: linear-gradient(136deg, rgba(0, 0, 0, 0.10) 0%, rgba(102, 102, 102, 0.10) 15%, rgba(0, 0, 0, 0.08) 29%, rgba(102, 102, 102, 0.08) 43%, rgba(0, 0, 0, 0.10) 68%, rgba(102, 102, 102, 0.10) 81%, rgba(0, 0, 0, 0.10) 100%);
+    opacity: 0.8;
+}
+
+body {
+    overflow: hidden;
+    background-color: #ffffff;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/img/OVERLAY.png');
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.2; 
+    pointer-events: none; 
+    z-index: 5;
+}
+/* Nav */
+
+a{
+    font-family: BebasNeue, sans-serif;
+}
+nav .navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 180px 0px 180px;
+}
+nav .home img{
+    height: 35px;
+}
+
+nav .home .logo-svg {
+    height: 35px;
+    width: auto;
+}
+nav .home .logo-svg:hover {
+    fill: #89F336;
+    transition: 0.2s ease;
+}
+
+nav .nav-links{
+    display: flex;
+    gap: 25px;
+}
+nav .nav-links li{
+    border-radius: 18px;
+    border: #CBCBCB 1px solid;
+}
+nav .nav-links li a{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .nav-links li a img{
+    height: 20px;
+    width: 20px;
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+#halftone-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150vw;
+    height: 150vh;
+    background: transparent;
+    z-index: -1;
+    overflow: visible;
+    margin-top: -20vh;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translateY(-30%);
+    z-index: 10;
+    color: #000;
+}
+
+.overlay-content h1 {
+    
+    font-family: BebasNeue;
+    font-size: 16rem;
+    margin: 0;
+    line-height: 105%;
+    overflow: hidden;
+    --stagger-delay: 0.02s;
+    --color-trans: 0.2s;
+}
+
+.overlay-content h1 span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease, color 0.2s ease;
+    margin: 0;
+    padding: 0;
+    height: 1em;
+}
+
+.overlay-content h1 span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.overlay-content h1:hover span {
+    transform: translateY(-100%);
+    color: #89F336;
+}
+
+/* Staggered delays using calc() */
+.overlay-content h1 span:nth-child(1) { transition: transform 0.3s ease calc(var(--stagger-delay) * 0), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(2) { transition: transform 0.3s ease calc(var(--stagger-delay) * 1), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(3) { transition: transform 0.3s ease calc(var(--stagger-delay) * 2), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(4) { transition: transform 0.3s ease calc(var(--stagger-delay) * 3), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(5) { transition: transform 0.3s ease calc(var(--stagger-delay) * 4), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(6) { transition: transform 0.3s ease calc(var(--stagger-delay) * 5), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(7) { transition: transform 0.3s ease calc(var(--stagger-delay) * 6), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(8) { transition: transform 0.3s ease calc(var(--stagger-delay) * 7), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(9) { transition: transform 0.3s ease calc(var(--stagger-delay) * 8), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(10) { transition: transform 0.3s ease calc(var(--stagger-delay) * 9), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(11) { transition: transform 0.3s ease calc(var(--stagger-delay) * 10), color var(--color-trans) ease; }
+.overlay-content h1 span:nth-child(12) { transition: transform 0.3s ease calc(var(--stagger-delay) * 11), color var(--color-trans) ease; }
+
+
+.overlay-content p {
+    font-size: 2.4rem;
+    font-family: BebasNeue;
+    color: #666666;
+    margin-top: -8px;
+}
