@@ -10,3 +10,16 @@ window.addEventListener("scroll", () => {
         nav.classList.remove("sticky");
     }
 });
+
+const footer = document.querySelector('footer');
+const observer = new IntersectionObserver(
+    ([entry]) => {
+        nav.classList.toggle('nav--hidden', entry.isIntersecting);
+    },
+    {
+        root: null,      
+        threshold: 0.85   
+    }
+);
+observer.observe(footer);
+
