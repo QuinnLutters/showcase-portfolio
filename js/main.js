@@ -17,7 +17,7 @@ ScrollSmoother.create({
 ------------------------------ */
 const nav = document.querySelector(".main-nav");
 const landing = document.querySelector(".landing");
-const footer = document.querySelector("footer");
+const footer = document.querySelector(".footer");
 
 /* -----------------------------
    State
@@ -112,7 +112,6 @@ ScrollTrigger.create({
     }
 });
 
-const footer = document.querySelector('footer');
 const observer = new IntersectionObserver(
     ([entry]) => {
         nav.classList.toggle('nav--hidden', entry.isIntersecting);
